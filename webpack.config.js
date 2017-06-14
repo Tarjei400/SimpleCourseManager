@@ -9,18 +9,13 @@ module.exports = {
     },
     output: {
         path: path.join(__dirname, "js"),
-        filename: "[name].bundle.js",
+        filename: "[name]/bundle.js",
         chunkFilename: "[id].chunk.js"
     },
     module: {
         loaders: [
-            {
-                loader: 'babel-loader',
-                test: path.join(__dirname, 'es6'),
-                query: {
-                    presets: 'es2015',
-                },
-            }
+            { test: /\.js$/, loader: 'babel-loader', exclude: /node_modules/ },
+            { test: /\.jsx$/, loader: 'babel-loader', exclude: /node_modules/ }
         ]
     },
     plugins: [
