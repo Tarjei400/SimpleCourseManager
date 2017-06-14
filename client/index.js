@@ -1,3 +1,18 @@
-import path from "path";
+import { Component } from "react";
+import ReactDOM from 'react-dom';
 
-console.log("Test message");
+class Root extends Component{
+
+    render() {
+        return `
+            <div> Root component </div>
+        `;
+
+    }
+};
+
+
+ReactDOM.render(
+<Root />,
+    document.querySelector('body')
+);
