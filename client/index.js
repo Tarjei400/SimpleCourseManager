@@ -1,19 +1,50 @@
-import { Component } from "react";
-import ReactDOM from 'react-dom';
-import index from './index.html';
+import React, {Component} from "react";
+import ReactDOM from "react-dom";
+import "./index.html";
 
-class Root extends Component {
+/***
+ *
+ */
+export class Root extends Component {
+    /***
+     *
+     * @returns {Promise}
+     */
+    async read() {
+        const promise = new Promise();
 
-    render() {
-        return `
-            <div> Root component </div>
-        `;
+        setTimeout(() => {
+            promise.resolve("TEST READ FILE");
+        }, 1000);
 
+        return promise;
     }
-};
 
-alert("Loaded");
+    /***
+     *
+     * @returns {Promise.<String>}
+     */
+    async write() {
+        const ret = await this.read();
+
+        alert("Read was done");
+
+        return ret;
+    }
+
+    /***
+     * Renders a component
+     *
+     * @returns {XML}
+     */
+    render() {
+        return (
+            <div> Root component </div>
+        );
+    }
+}
+
 ReactDOM.render(
-<Root />,
-    document.querySelector('#root')
+    <Root/>,
+    document.querySelector("#root")
 );
