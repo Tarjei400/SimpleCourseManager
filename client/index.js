@@ -1,7 +1,8 @@
 import { Component } from "react";
 import ReactDOM from 'react-dom';
+import index from './index.html';
 
-class Root extends Component{
+class Root extends Component {
 
     render() {
         return `
@@ -11,8 +12,8 @@ class Root extends Component{
     }
 };
 
-
+alert("Loaded");
 ReactDOM.render(
 <Root />,
-    document.querySelector('body')
+    document.querySelector('#root')
 );

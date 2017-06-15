@@ -1,0 +1,52 @@
+env:
+  browser: true
+  node: true
+  commonjs: true
+  es6: true
+extends:
+  - 'eslint:recommended'
+  - 'samrap'
+
+parser: babel-eslint
+parserOptions:
+  ecmaFeatures:
+    experimentalObjectRestSpread: true
+    jsx: true
+  sourceType: module
+plugins:
+  - react
+  - jsdoc
+
+rules:
+  require-jsdoc:
+    - error
+    - require:
+        FunctionDeclaration: true
+        MethodDefinition: true
+        ClassDeclaration: true
+
+  valid-jsdoc:
+    - error
+    - requireReturn: false
+      requireReturnType: true
+      requireReturnDescription: false
+      preferType:
+        string: "String"
+        object: "Object"
+        number: "Number"
+
+      prefer:
+        return: "returns"
+
+  indent:
+    - error
+    - 4
+  linebreak-style:
+    - error
+    - unix
+  quotes:
+    - error
+    - double
+  semi:
+    - error
+    - always
