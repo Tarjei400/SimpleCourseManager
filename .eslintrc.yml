@@ -23,13 +23,14 @@ rules:
     - require:
         FunctionDeclaration: true
         MethodDefinition: true
-        ClassDeclaration: true
+        ClassDeclaration: false
 
   valid-jsdoc:
     - error
     - requireReturn: false
       requireReturnType: true
       requireReturnDescription: false
+      requireParamDescription: false
       preferType:
         string: "String"
         object: "Object"

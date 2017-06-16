@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import { HashRouter, Route } from "react-router-dom";
-import { MainLayout } from "./components/MainLayout";
-import { HomeLayout } from "./components/HomeLayout";
-import { UsersLayout } from "./components/UsersLayout";
-import { CoursesLayout } from "./components/CoursesLayout";
+import { MainLayout } from "./layouts/MainLayout";
+import { HomeLayout } from "./layouts/HomeLayout";
+import { UsersLayout } from "./layouts/UsersLayout";
+import { CoursesLayout } from "./layouts/CoursesLayout";
 
 /***
  * Root component of a project
@@ -21,14 +21,13 @@ export class App extends Component {
         return (
             <HashRouter>
                 <MainLayout>
-                    <Route exact={true} path="/" component={HomeLayout} />
-                    <Route path="/users" component={UsersLayout}>
 
-                    </Route>
-                    <Route path="/courses" component={CoursesLayout}>
+                    <Route path="/" component={HomeLayout} exact={true}/>
+                    <Route path="/users" component={UsersLayout}/>
+                    <Route path="/courses" component={CoursesLayout}/>
 
-                    </Route>
                 </MainLayout>
+
             </HashRouter>
         );
     }

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 /***
  * Main menu component
@@ -14,7 +15,10 @@ export class MainMenu extends Component {
      */
     render() {
         return (
-            <div> Menu </div>
+            <div>
+                <Link to="/users">Users</Link>
+                <Link to="/courses">Courses</Link>
+            </div>
         );
     }
 }

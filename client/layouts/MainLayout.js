@@ -1,10 +1,12 @@
 import React, { Component } from "react";
-import { MainMenu } from "./MainMenu";
+import { MainMenu } from "../components/MainMenu";
+import { renderChildren } from "react-decoration";
 
 /***
  * Main Skeleton of application
  *
  * @class MainLayout
+ * @extends Component
  */
 export class MainLayout extends Component {
     /***
@@ -16,10 +18,9 @@ export class MainLayout extends Component {
     render() {
         return (
             <div className="app">
-                <aside className="primary-aside"></aside>
+                <aside className="primary-aside">asd</aside>
                 <MainMenu/>
-                <main> { this.props.children } </main>
-
+                <main>{this.props.children}</main>
             </div>
         );
     }
