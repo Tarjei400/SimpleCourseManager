@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 
-class Users extends Component {
+export class Users extends Component {
     /***
      * Renders component
      *
@@ -8,7 +8,7 @@ class Users extends Component {
      */
     render(){
         return (
-            <div> Menu </div>
+            <div> Users list </div>
         );
     }
 }

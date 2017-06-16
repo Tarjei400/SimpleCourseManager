@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import { FancyList } from "./components/FancyList/FancyList";
+import { Router, Router, browserHistory } from "react-router";
+
+import Menu from "./components/Menu";
 
 /***
  * Root component of a project

@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 
-class Menu extends Component {
+export class Courses extends Component {
     /***
      * Renders component
      *
@@ -8,7 +8,7 @@ class Menu extends Component {
      */
     render(){
         return (
-            <div> Menu </div>
+            <div> Courses list </div>
         );
     }
 }

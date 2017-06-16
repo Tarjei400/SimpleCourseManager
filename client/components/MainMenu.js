@@ -1,6 +1,6 @@
-import React, { Component } from "react"
+import React, { Component } from "react";
 
-class Courses extends Component {
+export class MainMenu extends Component {
     /***
      * Renders component
      *
