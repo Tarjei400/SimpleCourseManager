@@ -50,3 +50,6 @@ rules:
   semi:
     - error
     - always
+  object-curly-spacing:
+    - error
+    - always
