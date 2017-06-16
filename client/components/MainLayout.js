@@ -12,7 +12,7 @@ export class MainLayout extends Component {
             <div className="app">
                 <aside className="primary-aside"></aside>
                 <MainMenu/>
-                <main> { this.props.children }</main>
+                <main> { this.props.children } </main>
 
             </div>
         );

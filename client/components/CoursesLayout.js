@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 
-export class Courses extends Component {
+export class CoursesLayout extends Component {
     /***
      * Renders component
      *

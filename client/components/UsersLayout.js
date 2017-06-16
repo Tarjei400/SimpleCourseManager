@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 
-export class Users extends Component {
+export class UsersLayout extends Component {
     /***
      * Renders component
      *
