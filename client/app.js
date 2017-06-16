@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import { FancyList } from "./components/FancyList/FancyList";
-import { Router, Router, browserHistory } from "react-router";
+import { Router, Router, hashHistory } from "react-router";
 
-import Menu from "./components/Menu";
+import { MainLayout } from "./components/MainLayout";
+import { UsersLayout } from "./components/UsersLayout";
+import { CoursesLayout } from "./components/CoursesLayout";
 
 /***
  * Root component of a project
@@ -18,7 +20,17 @@ export class App extends Component {
      */
     render() {
         return (
-            <div> This is a Single Web Application <strong> this2 </strong></div>
+        <Router history = {hashHistory}>
+            <Route component={MainLayout}>
+                <Route path="/" component={HomeLayout} />
+                <Route path="users" component={UsersLayout}>
+
+                </Route>
+                <Route path="courses" component={CoursesLayout}>
+
+                </Route>
+            </Route>
+        </Router>
         );
     }
 }
