@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
-import { FancyList } from "./components/FancyList/FancyList";
-import { Router, Router, hashHistory } from "react-router";
+import { Router, hashHistory } from "react-router";
 
 import { MainLayout } from "./components/MainLayout";
+import { HomeLayout } from "./components/HomeLayout";
 import { UsersLayout } from "./components/UsersLayout";
 import { CoursesLayout } from "./components/CoursesLayout";
 
@@ -20,17 +20,17 @@ export class App extends Component {
      */
     render() {
         return (
-        <Router history = {hashHistory}>
-            <Route component={MainLayout}>
-                <Route path="/" component={HomeLayout} />
-                <Route path="users" component={UsersLayout}>
+            <Router history = {hashHistory}>
+                <Route component={MainLayout}>
+                    <Route path="/" component={HomeLayout} />
+                    <Route path="users" component={UsersLayout}>
 
-                </Route>
-                <Route path="courses" component={CoursesLayout}>
+                    </Route>
+                    <Route path="courses" component={CoursesLayout}>
 
+                    </Route>
                 </Route>
-            </Route>
-        </Router>
+            </Router>
         );
     }
 }

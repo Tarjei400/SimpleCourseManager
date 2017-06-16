@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 
 /***
- * Contains all course oriented components - Add, Update, Display courses
+ * Home page layout for application
  *
- * @class CoursesLayout
+ * @class HomeLayout
  */
-export class CoursesLayout extends Component {
+export class HomeLayout extends Component {
     /***
      * Renders component
      *
@@ -14,7 +14,7 @@ export class CoursesLayout extends Component {
      */
     render() {
         return (
-            <div> Courses list </div>
+            <div> Home layout </div>
         );
     }
 }
