@@ -1,11 +1,11 @@
 var path = require('path');
 var webpack = require('webpack');
 var LiveReloadPlugin = require('webpack-livereload-plugin');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     entry: {
-        client: "./client/index.js",
-        server: "./server/index.js"
+        client: "./client/index.js"
     },
     output: {
         path: path.join(__dirname, "public"),
@@ -19,14 +19,25 @@ module.exports = {
         ]
     },
     devServer: {
-        contentBase: path.join(__dirname, "public/client"),
-        compress: true,
+        inline: true,
         port: 8081,
-        lazy: false,
+        lazy: false
     },
 
     plugins: [
-        new LiveReloadPlugin()
+        new HtmlWebpackPlugin({
+            template: './client/index.tpl.ejs',
+            inject: 'body',
+            filename: 'index.html'
+        }),
+        new LiveReloadPlugin(),
+        new webpack.optimize.OccurrenceOrderPlugin(),
+        new webpack.HotModuleReplacementPlugin(),
+        new webpack.NoErrorsPlugin(),
+        //TODO: Minifiy bundle only on production environment
+        // new webpack.optimize.UglifyJsPlugin({
+        //     compress: { warnings: false }
+        // })
     ],
     stats: {
         // Nice colored output
