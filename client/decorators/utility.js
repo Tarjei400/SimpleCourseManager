@@ -1,4 +1,4 @@
-export function Properties(target, name, descriptor) {
+export function injectProperties(target, name, descriptor) {
     const oldFunction = descriptor.value;
 
     descriptor.value = () => {

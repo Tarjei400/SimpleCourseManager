@@ -20,15 +20,15 @@ export class App extends Component {
     render() {
         return (
             <HashRouter>
-                <Route component={MainLayout}>
-                    <Route path="/" component={HomeLayout} />
-                    <Route path="users" component={UsersLayout}>
+                <MainLayout>
+                    <Route exact={true} path="/" component={HomeLayout} />
+                    <Route path="/users" component={UsersLayout}>
 
                     </Route>
-                    <Route path="courses" component={CoursesLayout}>
+                    <Route path="/courses" component={CoursesLayout}>
 
                     </Route>
-                </Route>
+                </MainLayout>
             </HashRouter>
         );
     }

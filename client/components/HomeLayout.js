@@ -7,7 +7,7 @@ import React, { Component } from "react";
  */
 export class HomeLayout extends Component {
     /***
-     * Renders component
+     * Renders HomeLayout component
      *
      * @method render
      * @returns {XML}
