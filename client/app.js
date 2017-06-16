@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
-import { Router, hashHistory } from "react-router";
-
+import { HashRouter, Route } from "react-router-dom";
 import { MainLayout } from "./components/MainLayout";
 import { HomeLayout } from "./components/HomeLayout";
 import { UsersLayout } from "./components/UsersLayout";
@@ -20,7 +19,7 @@ export class App extends Component {
      */
     render() {
         return (
-            <Router history = {hashHistory}>
+            <HashRouter>
                 <Route component={MainLayout}>
                     <Route path="/" component={HomeLayout} />
                     <Route path="users" component={UsersLayout}>
@@ -30,7 +29,7 @@ export class App extends Component {
 
                     </Route>
                 </Route>
-            </Router>
+            </HashRouter>
         );
     }
 }
