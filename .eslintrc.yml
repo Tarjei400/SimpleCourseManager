@@ -18,6 +18,7 @@ plugins:
   - jsdoc
 
 rules:
+  max-len: off
   require-jsdoc:
     - error
     - require:
@@ -38,6 +39,9 @@ rules:
 
       prefer:
         return: "returns"
+
+  react/jsx-uses-react: error
+  react/jsx-uses-vars: error
 
   indent:
     - error
