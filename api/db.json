@@ -7,24 +7,16 @@
       "gender": "m"
     },
     {
-      "first_name": "asdasd",
-      "last_name": "asasda",
-      "id": 2
-    },
-    {
       "first_name": "Example user",
       "last_name": "Last name",
-      "id": 3
+      "id": 3,
+      "gender": "f"
     },
     {
       "first_name": "First",
-      "last_name": "last",
-      "id": 4
-    },
-    {
-      "first_name": "Test",
-      "last_name": "user",
-      "id": 5
+      "last_name": "lastedited",
+      "id": 4,
+      "gender": "m"
     },
     {
       "first_name": "Example",
@@ -35,17 +27,40 @@
   ],
   "courses": [
     {
-      "title": "SecondCourse",
-      "begin": 0,
-      "end": 10,
-      "candidate_limit": 3,
-      "id": 2
+      "title": "First Course",
+      "candidate_limit": "6",
+      "id": 1
     },
     {
-      "title": "First Course",
-      "candidate_limit": "4",
-      "id": 3
+      "title": "Second",
+      "candidate_limit": "6",
+      "id": 4
+    },
+    {
+      "id": 5,
+      "title": "asd",
+      "candidate_limit": "4"
     }
   ],
-  "courseWithUsers": []
+  "courseWithUsers": [
+    {
+      "id": "638a0650f8e25e92363d1d878e19dd81",
+      "userId": 1
+    },
+    {
+      "id": "aa99c363eaef6876104bb3b81d250c3f",
+      "courseId": 1,
+      "userId": 4
+    },
+    {
+      "id": "8b5a0c6b35975554d98b45086c734537",
+      "courseId": 4,
+      "userId": 3
+    },
+    {
+      "id": "2a5190b5f42afc3391144b3b1a7fca00",
+      "courseId": 5,
+      "userId": 1
+    }
+  ]
 }
