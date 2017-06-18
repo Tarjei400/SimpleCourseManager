@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Link, Route } from "react-router-dom";
-import { UserList, UserAdd, UserEdit } from "../components/User";
+import { UserList } from "../components/users/UserList";
+import { UserAdd } from "../components/users/UserAdd";
+import { UserEdit } from "../components/users/UserEdit";
 
 /***
  * Contains all user oriented components - Add, Update, Display users
