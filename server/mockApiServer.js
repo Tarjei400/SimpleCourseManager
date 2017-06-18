@@ -22,22 +22,24 @@ async function MapCourseWithUsers(entities) {
         const { courseWithUsers } = v;
 
         if (courseWithUsers) {
-            v.candidates = courseWithUsers;
+            v.candidates = [...courseWithUsers];
             delete v.courseWithUsers;
         }
 
         if (v.candidates) {
-            v.candidates = await Promise.all(v.candidates.map(async (candidate) => {
+            const res = await Promise.all(v.candidates.map(async (candidate) => {
                 if (candidate.userId) {
                     try {
                         const res = await axios.get(`${APIUrl}/users/${candidate.userId}`);
 
-                        return res.data;
+                        return res.data.data;
                     } catch (e) {
                         console.log("ERROR: ", e);
                     }
                 }
             }));
+
+            v.candidates = res;
         }
 
         return v;
