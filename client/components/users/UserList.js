@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { UserProvider } from "../../providers/UserProvider";
 import { Link } from "react-router-dom";
+import Pager from "react-pager";
 import _ from "lodash";
 
 /***
@@ -10,6 +11,8 @@ import _ from "lodash";
  * @type {{cursor: string}}
  */
 const LinkStyle = { cursor: "pointer" };
+
+const USERS_PER_PAGE = 5;
 
 /***
  * User List component
@@ -22,7 +25,11 @@ export class UserList extends Component {
      */
     constructor() {
         super();
-        this.state = { users: [] };
+        this.state = {
+            users: [],
+            currentPage: 0,
+            pages: 1,
+        };
     }
     /***
      * Fetches users from api
@@ -33,7 +40,7 @@ export class UserList extends Component {
     async fetchUsers() {
         const users = await UserProvider.getAll();
 
-        this.setState({ users });
+        this.setState({ users, pages: Math.ceil(users.length/USERS_PER_PAGE) });
 
         return users;
     }
@@ -73,7 +80,7 @@ export class UserList extends Component {
             );
         }
 
-        return users.map((user) => {
+        const usersList = users.map((user) => {
             return (
                 <div
                     key={user.id}
@@ -94,6 +101,8 @@ export class UserList extends Component {
                 </div>
             );
         });
+
+        return _.chunk(usersList, USERS_PER_PAGE)[this.state.currentPage];
     }
 
     /**
@@ -103,6 +112,13 @@ export class UserList extends Component {
         this.fetchUsers();
     }
 
+    /***
+     * @method handlePageChanged
+     * @param {Number} newPage
+     */
+    handlePageChanged(newPage) {
+        this.setState({ currentPage: newPage });
+    }
     /***
      * Renders UserList component
      *
@@ -115,6 +131,14 @@ export class UserList extends Component {
                 <div className="collection with-header">
                     <div className="container-header center"><h4>Users List</h4></div>
                     { this.renderUsers() }
+                    <Pager
+                        total={this.state.pages}
+                        current={this.state.currentPage}
+                        visiblePages={5}
+                        titles={{ first: "<|", last: ">|" }}
+                        className="pagination-sm"
+                        onPageChanged={this.handlePageChanged.bind(this)}
+                    />
                 </div>
             </div>
         );
