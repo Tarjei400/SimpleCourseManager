@@ -133,7 +133,6 @@ describe("JSON server API", () => {
 
             let courseUsers = await CourseProvider.getCourseUsers(createdCourse.id);
 
-            console.log(courseUsers);
             expect(courseUsers.length).toBe(0);
 
             await CourseProvider.addCourseUser(createdCourse.id, createdUser.id);
