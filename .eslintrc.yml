@@ -19,6 +19,7 @@ plugins:
 
 rules:
   max-len: off
+  no-case-declarations: off
   require-jsdoc:
     - error
     - require:

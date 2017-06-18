@@ -1,3 +1,6 @@
-/**
- * Created by ajutrowski on 16.06.17.
- */
+
+describe("MainMenu", () => {
+    it("should do something", () => {
+
+    });
+});

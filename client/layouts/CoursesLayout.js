@@ -11,6 +11,7 @@ import { CourseList, CourseAdd, CourseEdit } from "../components/Course";
 export class CoursesLayout extends Component {
     /***
      * @constructor
+     * @param {Object} match This is a routing object passed from parent component
      */
     constructor({ match }) {
         super();
@@ -26,12 +27,12 @@ export class CoursesLayout extends Component {
     render() {
         return (
             <div>
-                <Link to="/courses/add">add</Link>
-                <Link to="/courses/edit">edit</Link>
-                <Link to="/courses">list</Link>
                 <Route path={`${this.match.url}`} component={CourseList} exact={true}/>
                 <Route path={`${this.match.url}/add`} component={CourseAdd}/>
                 <Route path={`${this.match.url}/edit`} component={CourseEdit}/>
+                <Link to="/courses/add" className="btn-floating btn-large red right">
+                    <i className="material-icons" >add</i>
+                </Link>
             </div>
         );
     }

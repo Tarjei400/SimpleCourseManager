@@ -11,7 +11,7 @@ import { UserList, UserAdd, UserEdit } from "../components/User";
 export class UsersLayout extends Component {
     /***
      * @contructor
-     * @param {Object} match
+     * @param {Object} match This is a routing object passed from parent component
      */
     constructor({ match }) {
         super();
@@ -26,12 +26,13 @@ export class UsersLayout extends Component {
     render() {
         return (
             <div>
-                <Link to="/users/add">add</Link>
-                <Link to="/users/edit">edit</Link>
-                <Link to="/users">list</Link>
+
                 <Route path={`${this.match.url}`} component={UserList} exact={true}/>
                 <Route path={`${this.match.url}/add`} component={UserAdd}/>
                 <Route path={`${this.match.url}/edit`} component={UserEdit}/>
+                <Link to="/users/add" className="btn-floating btn-large red right">
+                    <i className="material-icons" >add</i>
+                </Link>
             </div>
         );
     }
