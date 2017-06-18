@@ -89,6 +89,21 @@ export class CourseProvider {
     }
 
     /***
+     * Updates a course with given id
+     *
+     * @static
+     * @method update
+     * @param {Number} courseId
+     * @param {Object} data
+     * @returns {Promise.<Object>}
+     */
+    static async update(courseId, { title, begin, end, candidate_limit }) {
+        const ret = await axios.patch(`${APIUrl}/courses/${courseId}`, { title, begin, end, candidate_limit });
+
+        return ret.data;
+    }
+
+    /***
      * Removes course with given id
      *
      * @static

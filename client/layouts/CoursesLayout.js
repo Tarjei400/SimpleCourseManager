@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Link, Route } from "react-router-dom";
-import { CourseList, CourseAdd, CourseEdit } from "../components/Course";
+import { CourseList } from "../components/courses/CourseList";
+import { CourseAdd } from "../components/courses/CourseAdd";
+import { CourseEdit } from "../components/courses/CourseEdit";
 
 /***
  * Contains all course oriented components - Add, Update, Display courses
