@@ -111,7 +111,14 @@ export class CourseAdd extends Component {
                             }
 
                         </div>
-                        <input type="submit" value="Save" />
+                        <button
+                            className="btn"
+                            type="submit"
+                            value="Save"
+                        >
+                            Save
+                            <i className="material-icons right">send</i>
+                        </button>
                     </div>
                 </form> </div>
         );

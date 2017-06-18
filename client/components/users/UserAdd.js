@@ -112,7 +112,14 @@ export class UserAdd extends Component {
 
                         </p>
                     </div>
-                    <input type="submit" value="Save" />
+                    <button
+                        className="btn waves-effect waves-light"
+                        type="submit"
+                        value="Save"
+                    >
+                        Save
+                        <i className="material-icons right">send</i>
+                    </button>
                 </form>
             </div>
 

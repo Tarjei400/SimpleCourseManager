@@ -1,6 +1,5 @@
 import React from "react";
 import { shallow } from "enzyme";
-import { CourseAdd } from "./CourseAdd";
 import { CourseUsers } from "./CourseUsers";
 import { CourseProvider } from "../../providers/CourseProvider";
 
