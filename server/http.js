@@ -5,7 +5,7 @@ import webpackHotMiddleware from "webpack-hot-middleware";
 import config from "../webpack.config.js";
 
 const app = express();
-const port = 8081;
+const port = 8085;
 
 //For development:
 const compiler = webpack(config);
