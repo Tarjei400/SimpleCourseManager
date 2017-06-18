@@ -11,9 +11,10 @@ To install project it should be enough to type
 `yarn install` or `npm install`
 
 Note: this project relies heavily on node.js cli tools such as:
-`babel-node` and `nodemon` and you have to install them globally,
+`babel-cli` and `nodemon` and you have to install them globally,
 since they are not listed in package.json as a dependency
 
+They can be install with `yarn`/`npm`
 It is recommended to use node.js 8.0.0
 
 To start application type `yarn run dev` or `npm run dev`
