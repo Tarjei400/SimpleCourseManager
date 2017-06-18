@@ -14,8 +14,9 @@ module.exports = {
     },
     module: {
         loaders: [
-            { test: /\.jsx?$/, loader: ['babel-loader', 'eslint-loader'], exclude: /node_modules/ },
+            { test: /\.jsx?$/, loader: ['babel-loader', 'eslint-loader'], exclude: /node_modules/exclude: /node_modules/ },
             { test: /\.html/, loader: 'file-loader?name=[path][name].[ext]', exclude: /node_modules/ },
+            { test: /\.css$/, loader: [ 'style-loader', 'css-loader' ]}
         ]
     },
     devServer: {
