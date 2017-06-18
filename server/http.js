@@ -30,5 +30,5 @@ app.listen(port, "0.0.0.0", (err) => {
     if (err) {
         console.log(err);
     }
-    console.info(`==> 🌎 Listening on port ${port}. Open up http://0.0.0.0:${port}/ in your browser.`);
+    console.info(`==> 🌎 Application available on port ${port}. Open up http://0.0.0.0:${port}/ in your browser.`);
 });
