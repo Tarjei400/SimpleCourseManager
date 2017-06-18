@@ -4,7 +4,7 @@ import { shallow } from "enzyme";
 import { UserList } from "./UserList";
 import { UserProvider } from "../../providers/UserProvider";
 
-describe("<CourseList />", () => {
+describe("<UserList />", () => {
 
     let wrapper = null;
     beforeEach( async ()=> {
