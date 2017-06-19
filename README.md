@@ -3,7 +3,7 @@
 This is a simple SPA application, utilizing a couple of REST API endpoint. 
 Code is written using ES7 on top of Babel, webpack, React and Materilze.
 
-I've used Jasmine and enzyme for testing components and classes been used.
+Testing libraries: Jasmine and enzyme
 
 ## Installation
 
@@ -24,5 +24,5 @@ If you succeded with installation step, API endpoints would be displayed
 upon application startup.
 
 ## Tests
-
-To run tests type `yarn run test` or `npm run test`
+Start aplication with `yarn run dev` or `npm run dev` then
+for running tests type `yarn run test` or `npm run test` in other terminal window
