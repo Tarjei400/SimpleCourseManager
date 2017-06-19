@@ -1,11 +1,13 @@
 import { UserProvider } from "../../providers/UserProvider";
 import { UserAdd } from "./UserAdd";
+import { saveStateLocally } from "../../decorators/utils";
 
 /***
  * User Edit component
  *
  * @class UserAdd
  */
+@saveStateLocally("/users/edit")
 export class UserEdit extends UserAdd {
     /***
      * @constructor
@@ -36,10 +38,14 @@ export class UserEdit extends UserAdd {
      * @event componentWillMount
      */
     componentWillMount() {
-        const { user } = this.props.location.state;
+        if (this.props.location.state) {
+            const { user } = this.props.location.state;
 
-        if (user) {
-            this.setState({ ...user , header: `Edit user: ${user.first_name} ${user.last_name}` });
+            if (user) {
+                this.setState({ ...user, header: `Edit user: ${user.first_name} ${user.last_name}` });
+            }
+        } else {
+            this.loadState();
         }
     }
 

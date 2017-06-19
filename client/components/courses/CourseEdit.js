@@ -1,11 +1,12 @@
 import { CourseProvider } from "../../providers/CourseProvider";
 import { CourseAdd } from "./CourseAdd";
-
+import { saveStateLocally } from "../../decorators/utils";
 /***
  * Course Edit component
  *
  * @class CourseAdd
  */
+@saveStateLocally("/courses/edit")
 export class CourseEdit extends CourseAdd {
     /***
      * @constructor
@@ -38,10 +39,14 @@ export class CourseEdit extends CourseAdd {
      * @event componentWillMount
      */
     componentWillMount() {
-        const { course } = this.props.location.state;
+        if (this.props.location.state) {
+            const { course } = this.props.location.state;
 
-        if (course) {
-            this.setState({ ...course , header: `Edit course: ${course.title} (${course.candidate_limit})` });
+            if (course) {
+                this.setState({ ...course, header: `Edit course: ${course.title} (${course.candidate_limit})` });
+            }
+        } else {
+            this.loadState();
         }
     }
 
