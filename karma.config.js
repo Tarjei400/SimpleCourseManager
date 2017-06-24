@@ -2,7 +2,19 @@ var path = require('path');
 
 module.exports = function (config) {
     config.set({
-        browsers: ['Chrome'],
+        browsers: ['CustomChromeHeadless'],
+        customLaunchers: {
+            CustomChromeHeadless: {
+                base: 'Chrome',
+                flags: [
+                    '--no-sandbox',
+                    '--disable-gpu',
+                    '--headless',
+                    // Without a remote debugging port, Google Chrome exits immediately.
+                    ' --remote-debugging-port=9222',
+                ]
+            }
+        },
         coverageReporter: {
             reporters: [
                 { type: 'html', subdir: 'html' },

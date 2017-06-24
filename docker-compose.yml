@@ -1,0 +1,27 @@
+version: '3'
+services:
+  database:
+    image: "mongo:latest"
+
+    networks:
+      local:
+        aliases:
+          - database
+
+  server:
+    build: "./docker/server"
+    working_dir: /app
+    volumes:
+      - "./:/app"
+    entrypoint: bash -c "yarn && yarn dev"
+
+  tests:
+    build: "./docker/tests"
+    working_dir: /app
+    volumes:
+      - "./:/app"
+    entrypoint: bash -c "yarn && yarn test"
+
+
+networks:
+  local:
