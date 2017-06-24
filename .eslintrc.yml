@@ -18,6 +18,7 @@ plugins:
   - jsdoc
 
 rules:
+  no-console: warn
   max-len: off
   no-case-declarations: off
   require-jsdoc:
