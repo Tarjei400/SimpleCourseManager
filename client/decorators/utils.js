@@ -26,3 +26,39 @@ export function saveStateLocally(route) {
         };
     };
 }
+
+/***
+ * This would add websocket logic to a componentn
+ * it will work on components only!
+ *
+ * @decorator withWebSocket
+ * @param {String} url
+ * @returns {function(*)}
+ */
+export function withWebSocket(url) {
+    return (BaseComponent) => class WebsocketComponent extends BaseComponent {
+        /***
+         * Creates a connection on comonent mount
+         *
+         * @method componentWillMount
+         */
+        componentWillMount() {
+            if (super.componentWillMount) {
+                super.componentWillMount();
+            }
+            this.connection = new WebSocket(url);
+        }
+
+        /***
+         * Closes connection on comonent unmount
+         *
+         * @method componentWillUnMount
+         */
+        componentWillUnmount() {
+            if (super.componentWillUnmount) {
+                super.componentWillUnmount();
+            }
+            this.connection.close();
+        }
+    };
+}

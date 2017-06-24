@@ -3,9 +3,8 @@ import webpack from "webpack";
 import webpackMiddleware from "webpack-dev-middleware";
 import webpackHotMiddleware from "webpack-hot-middleware";
 import config from "../webpack.config.js";
-
-const app = express();
-const port = 8085;
+import { server } from "./app";
+import { AppPort as port } from "./EndpointConfig";
 
 //For development:
 const compiler = webpack(config);
@@ -22,11 +21,11 @@ const middleware = webpackMiddleware(compiler, {
     },
 });
 
-app.use(middleware);
-app.use(webpackHotMiddleware(compiler));
-app.use(express.static(`${__dirname}../public`));
+server.use(middleware);
+server.use(webpackHotMiddleware(compiler));
+server.use(express.static(`${__dirname}../public`));
 
-app.listen(port, "0.0.0.0", (err) => {
+server.listen(port, "0.0.0.0", (err) => {
     if (err) {
         console.log(err);
     }
