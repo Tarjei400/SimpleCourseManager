@@ -8,7 +8,7 @@ Testing libraries: Jasmine and enzyme
 ## Installation
 
 To install project it should be enough to type 
-`yarn install` or `npm install`
+`yarn` or `npm install`
 
 Note: this project relies heavily on node.js cli tools such as:
 `babel-cli` and `nodemon` and you have to install them globally,
@@ -18,6 +18,8 @@ They can be install with `yarn`/`npm`
 It is recommended to use node.js 8.0.0
 
 To start application type `yarn run dev` or `npm run dev`
+However it also containes mongo db and example database soon, therefore
+it is recomended to use `docker-compose up`
 ## API Reference
 
 If you succeded with installation step, API endpoints would be displayed 
