@@ -22,13 +22,13 @@ module.exports = function (config) {
             ],
         },
         files: [
-            'tests.webpack.js',
+            'tests.config.js',
         ],
         frameworks: [
             'jasmine',
         ],
         preprocessors: {
-            'tests.webpack.js': ['webpack', 'sourcemap'],
+            'tests.config.js': ['webpack', 'sourcemap'],
         },
         reporters: ['progress', 'coverage'],
         webpack: {
