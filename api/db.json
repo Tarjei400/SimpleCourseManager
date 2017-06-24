@@ -2,8 +2,8 @@
   "users": [
     {
       "id": 1,
-      "first_name": "Grzegorz",
-      "last_name": "Gołowicz",
+      "first_name": "John",
+      "last_name": "Doe",
       "gender": "m"
     },
     {
@@ -16,13 +16,29 @@
       "first_name": "First",
       "last_name": "lastedited",
       "id": 4,
-      "gender": "m"
+      "gender": "f"
     },
     {
       "first_name": "Example",
       "last_name": "User",
       "gender": "m",
       "id": 6
+    },
+    {
+      "first_name": "User1",
+      "gender": "m",
+      "id": 7,
+      "last_name": "asd"
+    },
+    {
+      "first_name": "User2",
+      "gender": "m",
+      "id": 8
+    },
+    {
+      "first_name": "User3",
+      "gender": "m",
+      "id": 9
     }
   ],
   "courses": [
@@ -53,14 +69,49 @@
       "userId": 4
     },
     {
+      "id": "2a5190b5f42afc3391144b3b1a7fca00",
+      "courseId": 5,
+      "userId": 1
+    },
+    {
+      "id": "159b73016fa438e9eea70ff643df4500",
+      "courseId": 1,
+      "userId": 3
+    },
+    {
+      "id": "dfa2a15d0343624573b5fc4931e2a4d1",
+      "courseId": 5,
+      "userId": 4
+    },
+    {
+      "id": "76538c720e3041fd33a50f4510b8b9a7",
+      "courseId": 5,
+      "userId": 3
+    },
+    {
+      "id": "4b805cc04f612f99dbe9477721a13408",
+      "courseId": 4,
+      "userId": 6
+    },
+    {
       "id": "8b5a0c6b35975554d98b45086c734537",
       "courseId": 4,
       "userId": 3
     },
     {
-      "id": "2a5190b5f42afc3391144b3b1a7fca00",
-      "courseId": 5,
+      "id": "46b3b3f261e34f448fc69176542c17fd",
+      "courseId": 4,
       "userId": 1
+    },
+    {
+      "id": "c55f45a73b7524714660b9f05d37f4e9",
+      "courseId": 4,
+      "userId": 9
+    },
+    {
+      "id": "e93c2312efb6f52a6d4454fd36903565",
+      "courseId": 1,
+      "userId": 7
     }
   ]
 }
