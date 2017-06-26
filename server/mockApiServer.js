@@ -1,8 +1,9 @@
 import jsonServer from "json-server";
 import chalk from "chalk";
 import axios from "axios";
-import { APIUrl } from "./EndpointConfig";
+import Config from "../env/config";
 
+const { APIUrl } = Config;
 const server = jsonServer.create();
 const router = jsonServer.router("./api/db.json");
 const middlewares = jsonServer.defaults();

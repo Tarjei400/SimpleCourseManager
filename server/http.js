@@ -4,7 +4,9 @@ import webpackMiddleware from "webpack-dev-middleware";
 import webpackHotMiddleware from "webpack-hot-middleware";
 import config from "../webpack.config.js";
 import { server } from "./app";
-import { AppPort as port } from "./EndpointConfig";
+import Config from "../env/config";
+
+const { AppPort } = Config;
 
 //For development:
 const compiler = webpack(config);
@@ -14,7 +16,7 @@ const middleware = webpackMiddleware(compiler, {
     stats: {
         colors: true,
         hash: false,
-        timings: true,
+        timings: false,
         chunks: false,
         chunkModules: false,
         modules: false,
@@ -25,9 +27,9 @@ server.use(middleware);
 server.use(webpackHotMiddleware(compiler));
 server.use(express.static(`${__dirname}../public`));
 
-server.listen(port, "0.0.0.0", (err) => {
+server.listen(AppPort, "0.0.0.0", (err) => {
     if (err) {
         console.log(err);
     }
-    console.info(`==> 🌎 Application available on port ${port}. Open up http://0.0.0.0:${port}/ in your browser.`);
+    console.info(`==> 🌎 Application available on port ${AppPort}. Open up http://0.0.0.0:${AppPort}/ in your browser.`);
 });

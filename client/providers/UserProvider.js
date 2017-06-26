@@ -1,5 +1,7 @@
 import axios from "axios";
-import { APIUrl } from "../../server/EndpointConfig";
+import Config from "../../env/config";
+
+const { APIUrl } = Config;
 
 export class UserProvider {
     /***

@@ -1,6 +1,8 @@
 import axios from "axios";
-import { APIUrl } from "../../server/EndpointConfig";
+import Config from "config";
 import md5 from "md5";
+
+const { APIUrl } = Config;
 
 export class CourseProvider {
     /***

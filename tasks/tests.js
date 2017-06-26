@@ -3,6 +3,7 @@ import gulp from "gulp";
 import debug from "gulp-debug";import nodemon from "gulp-nodemon";
 import { SpecReporter } from "jasmine-spec-reporter";
 import { Server } from "karma";
+import { connectToMongo } from "mongo/connector";
 
 const async = require('jasmine-es6/overrides/async');
 
@@ -15,8 +16,9 @@ export function testsClient(done) {
 }
 
 const serverTests = 'server/**/*.spec.js';
-export function testsServer() {
+export async function testsServer() {
     async.default();
+    await connectToMongo();
     // //Runs server tests
     return gulp.src([ serverTests ])
         .pipe(debug())

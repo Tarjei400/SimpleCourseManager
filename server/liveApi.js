@@ -1,17 +1,18 @@
 import { server } from "./app";
-import { AppHost, AppPort as port } from "./EndpointConfig";
+import Config from "../env/config";
+import expressWs from "express-ws";
 
-require("express-ws")(server);
+const { AppHost, AppPort } = Config;
 
+expressWs(server);
 
 const clients = {};
 
 server.ws("/live", function (ws, req) {
-    console.info(`==> 🌎 Live API available. Open up ws://${AppHost}:${port}/live in your browser.`);
+    console.info(`==> 🌎 Live API available. Open up ws://${AppHost}:${AppPort}/live in your browser.`);
     ws.on("message", function (msg) {
         const parsedMessage = JSON.parse(msg);
 
         console.log(JSON.stringify(parsedMessage), typeof(msg));
     });
-    w;
 });

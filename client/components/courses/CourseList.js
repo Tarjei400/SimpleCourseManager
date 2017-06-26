@@ -54,6 +54,7 @@ export class CourseList extends Component {
         });
         this.setState({ courses });
     }
+
     /**
      * @event componentWillMount
      */

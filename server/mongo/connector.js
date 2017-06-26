@@ -21,7 +21,6 @@ export async function connectToMongo() {
     return mongoose.connect(MongoUrl);
 }
 
-
 export async function disconnectFromMongo(){
     mongoose.disconnect(function(err){
         if (err){
