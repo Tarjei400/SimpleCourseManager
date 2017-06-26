@@ -3,6 +3,12 @@ services:
   database:
     image: "mongo:latest"
 
+    ports:
+      - "27017:27017"
+
+    logging:
+      driver: "none"
+
     networks:
       local:
         aliases:
@@ -21,6 +27,16 @@ services:
     entrypoint: bash -c "yarn && yarn dev"
     tty: true
 
+    environment:
+      - NODE_ENV=docker
+
+    depends_on:
+      - "database"
+
+    networks:
+      local:
+        aliases:
+          - server
   tests:
     build: "./docker/tests"
     working_dir: /app
@@ -28,6 +44,16 @@ services:
       - "./:/app"
     entrypoint: bash -c "yarn && yarn test"
     tty: true
+    depends_on:
+      - "database"
+      - "server"
 
+    environment:
+      - NODE_ENV=dockerTests
+
+    networks:
+      local:
+        aliases:
+          - tests
 networks:
   local:
