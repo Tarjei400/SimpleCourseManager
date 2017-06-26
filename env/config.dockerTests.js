@@ -6,5 +6,5 @@ export const AppHost = `http://${ServerAdress}`;
 export const AppPort = 8085;
 export const AppWebSocketUrl = `ws:/${AppHost}:${AppPort}`;
 
-export const DatabaseName = "database";
+export const DatabaseName = "TestsDdatabase";
 export const MongoUrl = `mongodb://${MongoAdress}/${DatabaseName}`;
