@@ -1,7 +1,9 @@
 var path = require('path');
+var webpack = require('webpack');
 
 module.exports = function (config) {
     config.set({
+        logLevel: config.LOG_ERROR,
         browsers: ['CustomChromeHeadless'],
         customLaunchers: {
             CustomChromeHeadless: {
@@ -15,22 +17,31 @@ module.exports = function (config) {
                 ]
             }
         },
+        reporters: ["spec"],
+        specReporter: {
+            maxLogLines: 5,         // limit number of lines logged per test
+            suppressErrorSummary: true,  // do not print error summary
+            suppressFailed: false,  // do not print information about failed tests
+            suppressPassed: false,  // do not print information about passed tests
+            suppressSkipped: true,  // do not print information about skipped tests
+            showSpecTiming: false // print the time elapsed for each spec
+        },
+
         coverageReporter: {
             reporters: [
                 { type: 'html', subdir: 'html' },
                 { type: 'lcovonly', subdir: '.' },
             ],
         },
-        files: [
-            'tests.config.js',
-        ],
         frameworks: [
             'jasmine',
         ],
+        files: [
+            'client.tests.config.js'
+        ],
         preprocessors: {
-            'tests.config.js': ['webpack', 'sourcemap'],
+            'client.tests.config.js': ['webpack', 'sourcemap'],
         },
-        reporters: ['progress', 'coverage'],
         webpack: {
 
             externals: {
@@ -39,6 +50,7 @@ module.exports = function (config) {
                 'babel-core/register': true,
                 'babel-core/polyfill': true,
                 'babel-polyfill': true,
+                'babel-plugin-module-resolver': true,
                 'react/addons': true,
             },
             module: {
@@ -46,12 +58,23 @@ module.exports = function (config) {
                     {
                         test: /\.jsx?$/,
                         include: /client/,
-                        exclude: /(bower_components|node_modules)/,
+                        exclude: /(bower_components|node_modules|\*.config.js$)/,
                         loader: ['babel-loader']
                     }
                 ]
 
             },
+            plugins: [
+                new webpack.DefinePlugin({
+                    'process.env': {
+                        NODE_ENV: JSON.stringify(process.env.NODE_ENV)
+                    },
+                }),
+            ]
+        },
+        webpackMiddleware: {
+            // webpack-dev-middleware configuration
+            stats: 'errors-only'
         },
     });
 };

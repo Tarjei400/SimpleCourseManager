@@ -22,7 +22,8 @@ module.exports = {
     devServer: {
         inline: true,
         port: 8085,
-        lazy: false
+        lazy: false,
+        stats: { chunks: false }
     },
 
     plugins: [
@@ -34,11 +35,16 @@ module.exports = {
         new LiveReloadPlugin(),
         new webpack.optimize.OccurrenceOrderPlugin(),
         new webpack.HotModuleReplacementPlugin(),
-        new webpack.NoErrorsPlugin(),
         //TODO: Minifiy bundle only on production environment
         // new webpack.optimize.UglifyJsPlugin({
         //     compress: { warnings: false }
         // })
+        //Passing NODE_ENV variable to frontend
+        new webpack.DefinePlugin({
+            'process.env': {
+                NODE_ENV: JSON.stringify(process.env.NODE_ENV),
+            },
+        }),
     ],
     stats: {
         // Nice colored output
