@@ -3,7 +3,7 @@ import { UserProvider } from "./UserProvider";
 import _ from "lodash";
 import md5 from "md5";
 
-describe("JSON server API", () => {
+xdescribe("JSON server API", () => {
     const UniqueUserHash = md5("UniqueUserHash");
     const UniqueCourseHash = md5("UniqueCourseHash");
 
@@ -97,6 +97,11 @@ describe("JSON server API", () => {
             createdCourses = [];
         });
 
+        /***
+         * Helper function will mock create a course
+         *
+         * @returns {Promise.<T>}
+         */
         async function createMockCourse() {
             await CourseProvider.create(mockCourse);
             const ret = await CourseProvider.getAll();
@@ -104,6 +109,11 @@ describe("JSON server API", () => {
             return _.find(ret, mockCourse);
         }
 
+        /***
+         * Helper function, will create mock user
+         *
+         * @returns {Promise.<T>}
+         */
         async function createMockUser() {
             await UserProvider.create(mockUsers[0]);
             const ret = await UserProvider.getAll();
