@@ -7,7 +7,7 @@ const { MongoUrl } = Config;
 /***
  * Connects to mongo instance
  *
- * @function connect
+ * @function connectToMongo
  * @returns {Promise.<void>}
  */
 export async function connectToMongo() {
@@ -18,13 +18,20 @@ export async function connectToMongo() {
         .on("error", (error) => {
             console.log(chalk.red(`==> ✖️ MongoDB Error : ${error.message}`));
         });
+
     return mongoose.connect(MongoUrl);
 }
 
-export async function disconnectFromMongo(){
-    mongoose.disconnect(function(err){
-        if (err){
+/***
+ * Disconnects from mongo instance
+ *
+ * @function disconnectFromMongo
+ * @returns {Promise.<void>}
+ */
+export async function disconnectFromMongo() {
+    mongoose.disconnect(function (err) {
+        if (err) {
             console.log(err);
         }
-    })
+    });
 }

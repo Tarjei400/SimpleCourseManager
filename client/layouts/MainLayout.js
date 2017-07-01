@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { MainMenu } from "../components/MainMenu";
+import { MainMenu } from "./MainMenu";
 import { withWebSocket } from "../decorators/utils";
 import Config from "../../env/config";
 

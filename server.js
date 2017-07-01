@@ -1,4 +1,4 @@
 import "./server/liveApi"
 import "./server/http"
-import "./server/gql/connector"
+import "./server/gql/installer"
 import "./server/mockApiServer"

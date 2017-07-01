@@ -1,3 +1,5 @@
 import express from "express";
-import "./mongo/connector";
+import { connectToMongo } from "mongo/connector";
+
 export const server = express();
+connectToMongo();

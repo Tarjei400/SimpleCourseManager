@@ -20,13 +20,14 @@ export class MainMenu extends Component {
                     <a href="#" className="brand-logo">
 
                         <i className="material-icons">cloud</i>
-                        <div>Course manager</div>
+                        <div>Test App</div>
 
                     </a>
 
                     <div className="right hide-on-med-and-down">
                         <Link to="/users" className="waves-effect waves-light btn">Users </Link>
                         <Link to="/courses" className="waves-effect waves-light btn">Courses </Link>
+                        <Link to="/data" className="waves-effect waves-light btn">Data </Link>
                     </div>
                 </div>
             </nav>
