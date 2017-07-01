@@ -1,6 +1,7 @@
 import * as local from "./config.local";
 import * as docker from "./config.docker";
 import * as dockerTests from "./config.dockerTests";
+import * as heroku from "./config.heroku";
 
 /***
  * Returns proper configuration object depending on NODE_ENV variable
@@ -12,6 +13,7 @@ import * as dockerTests from "./config.dockerTests";
 function getEnvConfig(env) {
     const configs = {
         local,
+        heroku,
         docker,
         dockerTests,
     };

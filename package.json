@@ -4,6 +4,9 @@
   "main": "index.js",
   "author": "Adrian Jutrowski <adrian.jutrowski@xstream.dk>",
   "license": "MIT",
+  "engines": {
+    "node": "8.0.0"
+  },
   "dependencies": {
     "axios": "^0.16.2",
     "babel-cli": "^6.24.1",
@@ -85,7 +88,7 @@
     "yuidocjs": "^0.10.2"
   },
   "scripts": {
-    "start": "gulp start",
+    "start": "NODE_ENV=heroku gulp start",
     "dev": "gulp start",
     "build": "webpack --config webpack.config.js",
     "lint": "eslint ./client ./server",
