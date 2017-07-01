@@ -29,6 +29,8 @@
     "chart.js": "^2.6.0",
     "css-loader": "^0.28.4",
     "enzyme": "^2.8.2",
+    "eslint": "^4.0.0",
+    "eslint-plugin-react": "^7.1.0",
     "eslint-config-samrap": "^0.1.1",
     "eslint-import-resolver-babel-module": "^3.0.0",
     "eslint-loader": "^1.8.0",
@@ -95,9 +97,5 @@
     "lint-fix": "eslint --fix ./client ./server ./env",
     "test": "gulp tests",
     "api": "json-server ./api/db.json --port 3001"
-  },
-  "devDependencies": {
-    "eslint": "^4.0.0",
-    "eslint-plugin-react": "^7.1.0"
   }
 }
