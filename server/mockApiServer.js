@@ -75,13 +75,13 @@ server.use(router);
 
 const API_PORT = 3000;
 
-server.listen(API_PORT, () => {
-    console.log(chalk.cyan("  \\{^_^}/ hi!"));
-
-    console.info(`==> 🌎 API available on port ${API_PORT}. Open up http://0.0.0.0:${API_PORT}/ in your browser.`);
-    console.info(`==> 🌎 ${chalk.bold("Available endpoints:")}`);
-
-    for (const route in routes) {
-        console.log(`      ${route} -> ${routes[route]}`);
-    }
-});
+// server.listen(API_PORT, () => {
+//     console.log(chalk.cyan("  \\{^_^}/ hi!"));
+//
+//     console.info(`==> 🌎 API available on port ${API_PORT}. Open up http://0.0.0.0:${API_PORT}/ in your browser.`);
+//     console.info(`==> 🌎 ${chalk.bold("Available endpoints:")}`);
+//
+//     for (const route in routes) {
+//         console.log(`      ${route} -> ${routes[route]}`);
+//     }
+// });
