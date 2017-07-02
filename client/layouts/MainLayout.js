@@ -2,16 +2,15 @@ import React, { Component } from "react";
 import { MainMenu } from "./MainMenu";
 import { withWebSocket } from "../decorators/utils";
 
+const socketUrl = location.origin.replace(/^http/, "ws");
+
 /***
  * Main Skeleton of application
  *
  * @class MainLayout
  * @extends Component
  */
-
-const SOCKET = location.origin.replace(/^http/, "ws");
-
-@withWebSocket(`${SOCKET}/live`)
+@withWebSocket(`${socketUrl}/live`)
 export class MainLayout extends Component {
     /***
      * @constructor

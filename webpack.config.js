@@ -16,7 +16,12 @@ module.exports = {
         loaders: [
             { test: /\.jsx?$/, loader: ['babel-loader', 'eslint-loader'], exclude:[/node_modules/] },
             { test: /\.html/, loader: 'file-loader?name=[path][name].[ext]', exclude: /node_modules/ },
-            { test: /\.css$/, loader: [ 'style-loader', 'css-loader' ]}
+            { test: /\.css$/, loader: [ 'style-loader', 'css-loader' ]},
+            {
+                test: /\.(jpg|jpeg|gif|png|ico)$/,
+                exclude: /node_modules/,
+                loader:'file-loader?name=[path][name].[ext]'
+            }
         ]
     },
     devServer: {
