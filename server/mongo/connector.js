@@ -11,9 +11,6 @@ const { MongoUrl } = Config;
  * @returns {Promise.<void>}
  */
 export async function connectToMongo() {
-    if (process.env.NODE_ENV === "heroku"){
-        return;
-    }
     mongoose.connection
         .once("open", () => {
             console.log("==> 🌎 Connected to MongoDB");

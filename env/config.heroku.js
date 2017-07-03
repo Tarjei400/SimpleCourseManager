@@ -6,4 +6,4 @@ export const AppHost = `http://${ServerAdress}`;
 export const AppPort = process.env.PORT;
 export const AppWebSocketUrl = `ws:/${ServerAdress}:${AppPort}`;
 
-export const MongoUrl = `mongodb://${MongoAdress}`;
+export const MongoUrl = `mongodb://${process.env.MongoLab}`;
