@@ -1,4 +1,6 @@
 import "./server/liveApi"
 import "./server/http"
 import "./server/gql/installer"
-import "./server/mockApiServer"
+import "./server/auth"
+
+import "./server/mockApiServer" //TODO: Remove

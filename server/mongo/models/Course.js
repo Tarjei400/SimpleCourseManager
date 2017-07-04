@@ -6,7 +6,7 @@ import { User } from "mongo/models/User";
  *
  * @type {string}
  */
-export const CourseSchema = `
+export const CourseType = `
     type Course {
         _id: Int!
         name: String
@@ -59,8 +59,18 @@ async function getCourseUsers(course, { name }) {
 }
 
 export const RootCourseResolvers = {
-    courses: getAllCourses,
-    course: getCourse,
+    queries: {
+        courses: getAllCourses,
+        course: getCourse
+    },
+    mutations: {
+
+    }
 };
 
-export const CourseResolvers = { Course: { users: getCourseUsers } };
+export const CourseResolvers = {
+    Course: {
+        users:
+        getCourseUsers
+    }
+};

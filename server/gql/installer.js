@@ -1,14 +1,24 @@
 import { graphqlExpress, graphiqlExpress } from "graphql-server-express";
 import bodyParser from "body-parser";
 import { server } from "../app";
-import { schema } from "./rootQuery";
+import { schema } from "./main";
+import Config from "config";
+
+const { UseGraphiql } = Config;
+
+
 /***
  *  Initialize graphQL api
  */
-server.use("/graphql", bodyParser.json(), graphqlExpress({ schema }));
+server.use("/graphql", bodyParser.json(), graphqlExpress(
+    (req) => {
+      return { schema, context: req }
+    })
+);
 
-//TODO: Disabled this on product.
 /***
- * Initialize graphiQL, UI for making gaphQL queries.
+ * Initialize graphiQL, UI for making graphQL queries.
  */
-server.use("/graphiql", bodyParser.json(), graphiqlExpress({ endpointURL: "/graphql" }));
+if (UseGraphiql) {
+    server.use("/graphiql", bodyParser.json(), graphiqlExpress({endpointURL: "/graphql"}));
+}

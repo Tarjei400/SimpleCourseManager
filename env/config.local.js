@@ -7,3 +7,4 @@ export const AppPort = 8085;
 export const AppWebSocketUrl = `ws:/${ServerAdress}:${AppPort}`;
 
 export const MongoUrl = `mongodb://${MongoAdress}`;
+export const UseGraphiql = true;

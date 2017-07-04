@@ -8,3 +8,4 @@ export const AppWebSocketUrl = `ws:/${ServerAdress}:${AppPort}`;
 
 export const DatabaseName = "Database";
 export const MongoUrl = `mongodb://${MongoAdress}/${DatabaseName}`;
+export const UseGraphiql = true;
